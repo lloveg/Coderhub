@@ -11,7 +11,8 @@ class FileService {
     const statement = `SELECT * FROM avatar WHERE user_id = ?;`;
     const [result] = await connection.execute(statement, [userId]);
     // console.log(result);
-    return result[0];
+    // return result[0];
+    return result.pop();
   }
 
   async createFile(filename, mimetype, size, userId, momentId) {
